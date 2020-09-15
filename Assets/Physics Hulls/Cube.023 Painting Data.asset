@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de965f2e710c1c489ead8e62cd25da0, type: 3}
+  m_Name: Cube.023 Painting Data
+  m_EditorClassIdentifier: 
+  hullData: {fileID: 11400000, guid: 5b6e1c6a1fc52f4449d9dc3a1a670d56, type: 2}
+  sourceMesh: {fileID: -7771613508976059695, guid: d8dff4869521cf1439aaa6aa619b4bc3,
+    type: 3}
+  activeHull: 0
+  faceThickness: 0.1
+  hulls:
+  - name: Hull 1
+    isVisible: 1
+    type: 1
+    colour: {r: 0, g: 1, b: 1, a: 0.3}
+    material: {fileID: 0}
+    enableInflation: 0
+    inflationAmount: 0.01
+    isTrigger: 0
+    isChildCollider: 0
+    selectedFaces: f4ad0000cbad0000a5ad000084ad000064ad00005aad00005bad000031ad000030ad000065ad000085ad0000a4ad0000caad0000fead0000f5ad0000ffad000025ae000024ae000055ae000054ae000007ad000006ad0000ccac0000cdac0000
+    collisionMesh: {fileID: 0}
+    faceCollisionMesh: {fileID: 0}
+    collisionBox:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    hasColliderError: 0
+    numColliderFaces: 0
