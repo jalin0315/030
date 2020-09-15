@@ -17,7 +17,7 @@ public class Marbles : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.GetComponent<Rigidbody>().AddForce(transform.right * -400, ForceMode.Impulse);
-        }
+        }        
     }
 
     private void OnTriggerEnter(Collider other)

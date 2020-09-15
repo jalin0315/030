@@ -22,8 +22,8 @@ public class ChangeForce : MonoBehaviour
         }
         if (other.gameObject.CompareTag("彈珠") && isOpen)
         {
-            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.right * -450, ForceMode.Impulse);
-            other.gameObject.GetComponent<ConstantForce>().force = new Vector3(0, -790, 0);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.right * 100, ForceMode.Impulse);
+            other.gameObject.GetComponent<ConstantForce>().force = new Vector3(40, -190, 0);
         }
     }
 }
