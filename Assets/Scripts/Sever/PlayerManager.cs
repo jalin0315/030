@@ -16,8 +16,8 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 
     public List<GameObject> Gps = new List<GameObject>();
 
-    public static List<GameObject> Marbles = new List<GameObject>();
-    public List<GameObject> marbles = new List<GameObject>();
+    public static List<Marbles> Marbles = new List<Marbles>();
+    public List<Marbles> marbles = new List<Marbles>();
     private void Awake()
     {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
@@ -49,5 +49,12 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     private void Update()
     {
         marbles = Marbles;
+        for (int i = 0; i < Marbles.Count; i++)
+        {
+            if (Marbles[i])
+            {
+
+            }
+        }
     }
 }

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     u = "00" + item.ID;
                     GameObject marbles = PhotonNetwork.Instantiate(u,position[gps].position, Quaternion.identity, 0);
-                    PlayerManager.Marbles.Add(marbles);
+                    PlayerManager.Marbles.Add(marbles.GetComponent<Marbles>());
                 }
             }
         }
