@@ -60,6 +60,7 @@ MonoBehaviour:
   - PlayerInRoom_2
   - CloseOtherPlayer
   - Gps
+  - PutInPlay
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

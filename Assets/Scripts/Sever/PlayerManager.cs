@@ -14,10 +14,8 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 
     public GameObject playerRankGps, gpsParent;
 
-    public List<GameObject> Gps = new List<GameObject>();
-
-    public static List<Marbles> Marbles = new List<Marbles>();
-    public List<Marbles> marbles = new List<Marbles>();
+    public static List<GameObject> Gps = new List<GameObject>();
+    public List<GameObject> gps = new List<GameObject>();
 
     public List<GameObject> rank = new List<GameObject>();
     private void Awake()
@@ -49,19 +47,11 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             pl.transform.SetParent(Gps[i].transform);
             pl.transform.localScale = new Vector3(1, 1, 1);
             rank.Add(pl);
+            Marbles.Rank.Add(pl);
         }
     }
     private void Update()
     {
-        marbles = Marbles;
-        
-        for (int i = 0; i < Marbles.Count; i++)
-        {
-            if (Marbles[i].rank != 0 && Marbles[i].name == rank[i].name) 
-            {
-                rank[i].transform.SetParent(Gps[Marbles[i].rank - 1].transform);
-                rank[i].transform.position = Gps[Marbles[i].rank - 1].transform.position;
-            }
-        }
+        gps = Gps;
     }
 }

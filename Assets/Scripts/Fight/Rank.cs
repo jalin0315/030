@@ -22,10 +22,9 @@ public class Rank : MonoBehaviourPun
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("彈珠") && !marbles.Contains(other.gameObject))
+        if (other.gameObject.CompareTag("彈珠"))
         {
-            marbles.Add(other.gameObject);
-            other.GetComponent<Marbles>().rank = i + 1;
+            other.GetComponent<Marbles>().rankint = i + 1;
             i += 1;
         }
     }
