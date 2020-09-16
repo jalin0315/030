@@ -9816,7 +9816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &507378606
 Transform:
   m_ObjectHideFlags: 0
@@ -9871,7 +9871,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -9892,7 +9892,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -10512,7 +10512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &546754393
 Transform:
   m_ObjectHideFlags: 0
@@ -10567,7 +10567,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -10588,7 +10588,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -12142,7 +12142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &629110041
 Transform:
   m_ObjectHideFlags: 0
@@ -12197,7 +12197,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -12218,7 +12218,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -15449,7 +15449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &767376969
 Transform:
   m_ObjectHideFlags: 0
@@ -15504,7 +15504,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -15525,7 +15525,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -20570,7 +20570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &955567307
 Transform:
   m_ObjectHideFlags: 0
@@ -20625,7 +20625,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -20646,7 +20646,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -30121,7 +30121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1472096287
 Transform:
   m_ObjectHideFlags: 0
@@ -30176,7 +30176,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -30197,7 +30197,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -30388,7 +30388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1479427850
 Transform:
   m_ObjectHideFlags: 0
@@ -32121,7 +32121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1522056344
 Transform:
   m_ObjectHideFlags: 0
@@ -32176,7 +32176,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -32197,7 +32197,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -33553,7 +33553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1590849343
 Transform:
   m_ObjectHideFlags: 0
@@ -33608,7 +33608,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -33629,7 +33629,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26415092, g: 0.18316126, b: 0.18316126, a: 1}
+      key0: {r: 0.97769105, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -34231,7 +34231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: 0
-  y: -390
+  y: -490
   z: 0
   isOpen: 0
 --- !u!64 &1634500137
@@ -43110,7 +43110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2065539706
 Transform:
   m_ObjectHideFlags: 0
@@ -45148,7 +45148,7 @@ MeshCollider:
   m_GameObject: {fileID: 1699486892441278426}
   m_Material: {fileID: 13400000, guid: b40257f9e995c7043a87283262e9ed90, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -48008,7 +48008,7 @@ MeshCollider:
   m_GameObject: {fileID: 6394282224151137082}
   m_Material: {fileID: 13400000, guid: b40257f9e995c7043a87283262e9ed90, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
