@@ -5,16 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Entrance.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FightMap_8.unity
     guid: 28a610f097fb3344d87c4a46cafb03e5
-  - enabled: 0
-    path: Assets/Scenes/FightMap_1.unity
-    guid: ea0c963bf969ed3468bb407e43af73be
-  - enabled: 1
-    path: Assets/Scenes/FightMap_7.unity
-    guid: d8f36fb5290ce2f44a3e7ba9acb5d8c4
   m_configObjects: {}

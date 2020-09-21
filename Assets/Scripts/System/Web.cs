@@ -71,10 +71,6 @@ public class Web : MonoBehaviour
         form.AddField("loginPass", password);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.0.3/UnityBackend/Login.php", form))
-<<<<<<< HEAD
-
-=======
->>>>>>> 8b2d11a43fd064adb6b9a0da75f3af33661492d8
         {
             yield return www.SendWebRequest();
 

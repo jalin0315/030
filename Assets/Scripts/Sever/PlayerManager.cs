@@ -46,6 +46,9 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             pl.name = PhotonNetwork.PlayerList[i].NickName;
             pl.transform.SetParent(Gps[i].transform);
             pl.transform.localScale = new Vector3(1, 1, 1);
+
+            RankManager._RankText.Add(pl);
+
             rank.Add(pl);
             Marbles.Rank.Add(pl);
         }
