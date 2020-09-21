@@ -64,25 +64,28 @@ public class Web : MonoBehaviour
         }
     }
 
-    public IEnumerator Login(string username,string password)
+    public IEnumerator Login(string username, string password)
     {
         WWWForm form = new WWWForm();
         form.AddField("loginUser", username);
         form.AddField("loginPass", password);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.0.3/UnityBackend/Login.php", form))
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8b2d11a43fd064adb6b9a0da75f3af33661492d8
         {
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
             {
-                提示.myText.text = www.error.ToString();                
+                提示.myText.text = www.error.ToString();
             }
             else
             {
                 提示.myText.text = www.downloadHandler.text.ToString();    //登入成功
-                if (提示.myText.text == "登入成功") 
+                if (提示.myText.text == "登入成功")
                 {
                     開始連線.EnterGame();
                     讀檔.善良();
