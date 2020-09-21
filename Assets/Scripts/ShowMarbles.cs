@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ShowMarbles : MonoBehaviour
+public class ShowMarbles : MonoBehaviourPun
 {
     public bool isBack;
     public float speed;
@@ -18,28 +20,23 @@ public class ShowMarbles : MonoBehaviour
     //每 frame 旋轉速度。
     float rotationspeed = 45;
 
-    public GameObject[] 限制轉動;
+    public L_ l;
 
+    public Material[] materials;
+    MeshRenderer mr;
     void Start()
     {
-
+        mr = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 限制轉動.Length; i++)
+        ShowAndRing();
+        if (PhotonNetwork.IsConnected)
         {
-            if (限制轉動[i].activeSelf)
-            {
-                return;
-            }
-            else
-            {
-                ShowAndRing();
-            }
+            mr.material = materials[l.loadShowAndFight - 1];
         }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isLeft = true;
@@ -56,7 +53,7 @@ public class ShowMarbles : MonoBehaviour
                 isBack = false;
             }
         }
-        
+
     }
     void ShowAndRing()
     {

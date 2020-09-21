@@ -26,7 +26,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
 
     public string roomName;
 
-    ShowMarbles marbles;
+    public ShowMarbles marbles;
     public GameObject playerNamePrefab;
     public Transform gridLayout;
 
@@ -51,7 +51,6 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
     private void Start()
     {
         mapSelect = 1;
-        marbles = GameObject.Find("ShowTime").gameObject.GetComponent<ShowMarbles>();
         //if (instance == null)
         //{
         //    instance = this;

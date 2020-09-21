@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour {
 	bool up, down, left, right;
 	void Start ()
 	{
-		offset = transform.position - player.transform.position;
+		//offset = transform.position - player.transform.position;
 		x = -157.377f;
 		y = 37.231f;
 		cm = GetComponent<Camera>();

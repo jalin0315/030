@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeForce : MonoBehaviour
 {
-    public float x, y, z;
+    public float x, y, z,Go;
     public bool isOpen;
 
     private void OnCollisionEnter(Collision collision)
@@ -22,8 +22,7 @@ public class ChangeForce : MonoBehaviour
         }
         if (other.gameObject.CompareTag("彈珠") && isOpen)
         {
-            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.right * 100, ForceMode.Impulse);
-            other.gameObject.GetComponent<ConstantForce>().force = new Vector3(40, -190, 0);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * Go, ForceMode.Impulse);
         }
     }
 }

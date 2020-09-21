@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
+
 
 
 public class L_ : MonoBehaviourPun
@@ -18,7 +21,8 @@ public class L_ : MonoBehaviourPun
     public List<int> loadMarblesID = new List<int>();
     public int loadShowAndFight;
 
-    public GameObject nameIn,start,money;
+    public GameObject nameIn,start;
+    public Text money;
     public NetwordLauncher playername;
     //string fileName = "gamesave.dat";
     public void 善良()
@@ -40,7 +44,7 @@ public class L_ : MonoBehaviourPun
             start.SetActive(false);
             playername.nameText.text = loadPlayerName;
             PhotonNetwork.NickName = loadPlayerName;
-            money.GetComponent<UnityEngine.UI.Text>().text = loadPlayerMoney.ToString();
+            money.text = loadPlayerMoney.ToString();
             Debug.LogWarning("讀取完成,你好  " + loadPlayerName);
         }
         else
@@ -48,9 +52,17 @@ public class L_ : MonoBehaviourPun
             nameIn.SetActive(true);
             loadPlayerMoney = 100;
             loadShowAndFight = 1;
-            money.GetComponent<UnityEngine.UI.Text>().text = loadPlayerMoney.ToString();
+            money.text = loadPlayerMoney.ToString();
             loadMarblesID.Add(1);
         }
-
+    }
+    private void Update()
+    {
+        //獲取編號
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if (index == 0)
+        {
+            money.text = loadPlayerMoney.ToString();
+        }
     }
 }
