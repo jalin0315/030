@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 1689681447020256799}
   - component: {fileID: 8738827338324412544}
   - component: {fileID: 2587413003844348997}
+  - component: {fileID: -3362435644761318931}
   m_Layer: 0
   m_Name: 001
   m_TagString: "\u5F48\u73E0"
@@ -311,7 +312,7 @@ MonoBehaviour:
   vv: {x: 0, y: 0, z: 0}
   ID: 1
   rankint: 0
-  rank: []
+  lap: 0
 --- !u!114 &1689681447020256799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,3 +366,20 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-3362435644761318931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689681446039092190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89dc46c3f5e484149a9e300479b58de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ShowLine: 1
+  _ActiveWaypointIndex: 0
+  _MultiLapWaypointIndex: 0
+  _PreviousLapIndex: -1
+  _RankGive: -1

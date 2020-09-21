@@ -8,7 +8,7 @@ public class BetPrompt : MonoBehaviour
     public GameObject gambLing;
     public bool isOpen;
     public GameObject[] slot;
-    public int check;
+    public int check,bet;
     public static int Check;
 
     void Start()
@@ -41,6 +41,7 @@ public class BetPrompt : MonoBehaviour
     {
         if (burden > 0 && Gambling.gamblingQuantity > 0 && Gambling.moneyQuantity > 0) 
         {
+            bet += 1;
             burden -= 1;
             Gambling.gamblingQuantity -= 1;
             Gambling.moneyQuantity -= 1;
@@ -51,6 +52,7 @@ public class BetPrompt : MonoBehaviour
     {
         if (burden < 5 && Gambling.gamblingQuantity < 5 )
         {
+            bet -= 1;
             burden += 1;
             Gambling.gamblingQuantity += 1;
             Gambling.moneyQuantity += 1;

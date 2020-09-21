@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     public int ID, gps;
 
     public string u;
+
+    public static List<GameObject> marbles = new List<GameObject>();
+    public List<GameObject> mrbs = new List<GameObject>();
+
+    GameObject ms;
     private void Awake()
     {
         ID = GameObject.Find("S&L").GetComponent<L_>().loadShowAndFight;
@@ -55,7 +60,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         //    }
         //}
         u = "00" + ID;
-        GameObject marbles = PhotonNetwork.Instantiate(u, position[gps].position, Quaternion.identity, 0);
+        GameObject mars = PhotonNetwork.Instantiate(u, position[gps].position, Quaternion.identity, 0);
+        
 
         //foreach (var player in PhotonNetwork.PlayerList)
         //{
@@ -74,6 +80,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         //        PlayerManager.Marbles.Add(marbles.GetComponent<Marbles>());
         //    }
         //}
+    }
+    private void Update()
+    {
+        mrbs = marbles;
     }
 }
    

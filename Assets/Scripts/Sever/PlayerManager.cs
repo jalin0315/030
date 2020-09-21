@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     public static List<GameObject> Gps = new List<GameObject>();
     public List<GameObject> gps = new List<GameObject>();
 
-    public List<GameObject> rank = new List<GameObject>();
+    //public List<GameObject> rank = new List<GameObject>();
     private void Awake()
     {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)    //定位版
@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             pl.transform.GetChild(0).GetComponent<Text>().text = p.NickName;
             pl.transform.SetParent(gridLayout); 
             pl.transform.localScale = new Vector3(1, 1, 1);
+            Money.Gambing_.Add(pl);
             // Add a button for each player in the room.
             // You can use p.NickName to access the player's nick name.
         }
@@ -46,8 +47,11 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             pl.name = PhotonNetwork.PlayerList[i].NickName;
             pl.transform.SetParent(Gps[i].transform);
             pl.transform.localScale = new Vector3(1, 1, 1);
-            rank.Add(pl);
-            Marbles.Rank.Add(pl);
+
+            RankManager._RankText.Add(pl);
+
+            //rank.Add(pl);
+            //Marbles.Rank.Add(pl);
         }
     }
     private void Update()

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class TrackPoint : MonoBehaviour
+public class TrackPoint : MonoBehaviourPun
 {
     [Header("Debug")] [SerializeField] private bool _ShowLine = false;
     private GameObject _TrackPoint;
@@ -18,7 +19,7 @@ public class TrackPoint : MonoBehaviour
     private void Start()
     {
         _TrackPoint = new GameObject();
-        _TrackPoint.name = "TrackPoint_" + name;
+        _TrackPoint.name = "TrackPoint_" + photonView.Owner.NickName;
         IconManager.SetIcon(_TrackPoint, IconManager.Icon.DiamondPurple);
     }
 
@@ -65,10 +66,10 @@ public class TrackPoint : MonoBehaviour
                 {
                     _ActiveWaypointIndex++;
                     SetPosition();
-                    if (_MultiLapWaypointIndex == RankManager._Instance._NumberOfTurns - 1)
+                    if (_MultiLapWaypointIndex == RankManager._NumberOfTurns - 1)
                     {
                         _RankGive = PlayerRank._Instance._RankGive + 1;
-                        PlayerRank._Instance._RankGive += 1;
+                        PlayerRank._Instance._RankGive += 1;                        
                         return;
                     }
                     if (_ActiveWaypointIndex == WaypointsManager._Instance._Count - 1)

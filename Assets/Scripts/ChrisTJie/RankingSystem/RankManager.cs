@@ -8,9 +8,15 @@ public class RankManager : MonoBehaviour
 {
     public static RankManager _Instance;
     public bool _MultiLapMode;
-    public int _NumberOfTurns;
-    [SerializeField] private Text[] _RankText;
+    public static int _NumberOfTurns;    //圈數
+    public int _numberOfTurns;    //圈數
+
+
+
+    public static List<GameObject> _RankText = new List<GameObject>();
+    public List<GameObject> _rankText = new List<GameObject>();
     private Dictionary<string, PlayerRank> _Players;
+
 
     private void Awake()
     {
@@ -20,6 +26,7 @@ public class RankManager : MonoBehaviour
     private void Start()
     {
         _Players = new Dictionary<string, PlayerRank>();
+        _NumberOfTurns = _numberOfTurns;
     }
 
     public void SetRank(PlayerRank _player)
@@ -31,7 +38,7 @@ public class RankManager : MonoBehaviour
             int _i = 0;
             foreach (KeyValuePair<string, PlayerRank> _item in _SortedPlayers)
             {
-                _RankText[_i].text = (_i + 1) + " . " + _item.Value._Name;
+                _RankText[_i].transform.GetChild(0).GetComponent<Text>().text = (_i + 1) + " . " + _item.Value._Name;
                 _i++;
             }
             return;
@@ -42,11 +49,15 @@ public class RankManager : MonoBehaviour
             int _i = 0;
             foreach (KeyValuePair<string, PlayerRank> _item in _SortedPlayers)
             {
-                _RankText[_i].text = (_i + 1) + " . " + _item.Value._Name;
+                _RankText[_i].transform.GetChild(0).GetComponent<Text>().text = (_i + 1) + " . " + _item.Value._Name;
                 _i++;
             }
             return;
         }
+    }
+    private void Update()
+    {
+        _rankText = _RankText;
     }
 }
 

@@ -8,36 +8,38 @@ public class Marbles : MonoBehaviourPunCallbacks
 {
     public Vector3 vv;
     int i;
-    public int ID,rankint;
-    Rigidbody ry;
+    public int ID,rankint,lap;
 
-    public static List<GameObject> Rank = new List<GameObject>();
-    public List<GameObject> rank = new List<GameObject>();
+    //public static List<GameObject> Rank = new List<GameObject>();
+    //public List<GameObject> rank = new List<GameObject>();
+
+    private void Start()
+    {
+        GameManager.marbles.Add(gameObject);
+    }
     private void Awake()
     {
         vv = transform.position;
-        ry = GetComponent<Rigidbody>();
-
-
     }
     private void Update()
     {
-        rank = Rank;
+        //rank = Rank;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.GetComponent<Rigidbody>().AddForce(transform.right * -400, ForceMode.Impulse);
         }
-        if (rankint != 0)
-        {
-            foreach (var r in Rank)
-            {
-                if (r.name == photonView.Owner.NickName) 
-                {
-                    r.transform.SetParent(PlayerManager.Gps[rankint - 1].transform);
-                    r.transform.position = PlayerManager.Gps[rankint - 1].transform.position;
-                }
-            }
-        }
+        //if (rankint != 0)
+        //{
+        //    foreach (var r in Rank)
+        //    {
+        //        if (r.name == photonView.Owner.NickName) 
+        //        {
+        //            r.transform.SetParent(PlayerManager.Gps[rankint - 1].transform);轉彎數量
+        //            r.transform.position = PlayerManager.Gps[rankint - 1].transform.position;
+        //        }
+        //    }
+        //}
+        gameObject.name = photonView.Owner.NickName;
     }
 
     private void OnTriggerEnter(Collider other)
