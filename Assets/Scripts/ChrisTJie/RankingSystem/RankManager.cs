@@ -9,9 +9,7 @@ public class RankManager : MonoBehaviour
     public static RankManager _Instance;
     public bool _MultiLapMode;
     public int _NumberOfTurns;
-    public static List<GameObject> _RankText = new List<GameObject>();
-    public List<GameObject> _rankText = new List<GameObject>();
-
+    [SerializeField] private Text[] _RankText;
     private Dictionary<string, PlayerRank> _Players;
 
     private void Awake()
@@ -33,8 +31,7 @@ public class RankManager : MonoBehaviour
             int _i = 0;
             foreach (KeyValuePair<string, PlayerRank> _item in _SortedPlayers)
             {
-                _RankText[_i].transform.SetParent(PlayerManager.Gps[_i].transform);
-                _RankText[_i].transform.position = PlayerManager.Gps[_i].transform.position;
+                _RankText[_i].text = (_i + 1) + " . " + _item.Value._Name;
                 _i++;
             }
             return;
@@ -45,16 +42,11 @@ public class RankManager : MonoBehaviour
             int _i = 0;
             foreach (KeyValuePair<string, PlayerRank> _item in _SortedPlayers)
             {
-                _RankText[_i].transform.SetParent(PlayerManager.Gps[_i].transform);
-                _RankText[_i].transform.position = PlayerManager.Gps[_i].transform.position;
+                _RankText[_i].text = (_i + 1) + " . " + _item.Value._Name;
                 _i++;
             }
             return;
         }
-    }
-    void Update()
-    {
-        _rankText = _RankText;
     }
 }
 
