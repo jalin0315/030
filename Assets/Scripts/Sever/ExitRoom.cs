@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
 {
@@ -27,6 +28,12 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
                 }
             }
         }
+    }
+    public void GameLeave()
+    {
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene(0);
+
     }
     public override void OnLeftRoom()
     {        

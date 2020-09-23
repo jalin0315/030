@@ -145,6 +145,8 @@ MonoBehaviour:
   vv: {x: 0, y: 0, z: 0}
   ID: 3
   rankint: 0
+  lap: 0
+  bet: 0
 --- !u!114 &6910667121209988328
 MonoBehaviour:
   m_ObjectHideFlags: 0

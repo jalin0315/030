@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             pl.transform.GetChild(0).GetComponent<Text>().text = p.NickName;
             pl.transform.SetParent(gridLayout); 
             pl.transform.localScale = new Vector3(1, 1, 1);
+            pl.name = p.NickName;
             Money.Gambing_.Add(pl);
             // Add a button for each player in the room.
             // You can use p.NickName to access the player's nick name.

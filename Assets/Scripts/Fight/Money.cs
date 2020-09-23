@@ -25,7 +25,17 @@ public class Money : MonoBehaviour
 
         for (int i = 0; i < Gambing_.Count; i++)
         {
-            bet.Add(Gambing_[i].GetComponent<BetPrompt>().bet);
+            bet[i] = Gambing_[i].GetComponent<BetPrompt>().bet;
         }
+        for (int i = 0; i < GameManager.marbles.Count; i++)
+        {
+            foreach (var playerXX in Gambing_)
+            {
+                if (playerXX.name == GameManager.marbles[i].name)
+                {
+                    GameManager.marbles[i].GetComponent<Marbles>().bet = playerXX.GetComponent<BetPrompt>().bet;
+                }
+            }
+        }        
     }
 }

@@ -2,18 +2,86 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class Rank : MonoBehaviourPun
 {
-    private void OnTriggerEnter(Collider other)
+    public static List<Marbles> Marbles = new List<Marbles>();
+    public List<Marbles> marbles = new List<Marbles>();
+
+    public GameObject rank, over,exit;
+    public Text money,moneyLook;
+
+    bool isOpen;
+    S_ s;
+    L_ l;
+    private void Start()
     {
-        if (other.gameObject.CompareTag("彈珠") && other.GetComponent<Marbles>().lap < RankManager._NumberOfTurns)
+        isOpen = true;
+        s = GameObject.Find("S&L").GetComponent<S_>();
+        l = GameObject.Find("S&L").GetComponent<L_>();
+    }
+    private void Update()
+    {
+        marbles = Marbles;
+        GameOver();
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("彈珠"))
         {
-            other.GetComponent<Marbles>().lap += 1;
+            other.GetComponent<Marbles>().lap += 1;            
         }
-        else if (other.gameObject.CompareTag("彈珠") && other.GetComponent<Marbles>().lap == RankManager._NumberOfTurns)
+    }
+    public void GameOver()
+    {
+        if (Marbles.Count == PhotonNetwork.PlayerList.Length) 
         {
-            other.GetComponent<Rigidbody>().isKinematic = true;
+            rank.SetActive(false);
+            over.SetActive(true);
+            exit.SetActive(true);
+            for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
+            {
+                over.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<UnityEngine.UI.Text>().text = rank.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<UnityEngine.UI.Text>().text;
+            }            
+        }
+
+        if (over.activeSelf && isOpen)
+        {
+            for (int i = 0; i < Marbles.Count; i++)
+            {
+                if (i == 0)
+                {
+                    l.loadPlayerMoney = int.Parse(money.text) + Marbles[i].bet * 5 ;
+                    if (Marbles[i].name == PhotonNetwork.LocalPlayer.NickName)
+                    {
+                        l.loadPlayerMoney = l.loadPlayerMoney + 25;
+                    }
+                }
+                else if (i == 1)
+                {
+                    l.loadPlayerMoney = l.loadPlayerMoney + Marbles[i].bet * 4;
+                    if (Marbles[i].name == PhotonNetwork.LocalPlayer.NickName)
+                    {
+                        l.loadPlayerMoney = l.loadPlayerMoney + 15;
+                    }
+                }
+                else if (i == 2)
+                {
+                    l.loadPlayerMoney = l.loadPlayerMoney + Marbles[i].bet * 3;
+                    if (Marbles[i].name == PhotonNetwork.LocalPlayer.NickName)
+                    {
+                        l.loadPlayerMoney = l.loadPlayerMoney + 10;
+                    }
+                }
+                else
+                {
+                    l.loadPlayerMoney = l.loadPlayerMoney + Marbles[i].bet * 0;
+                }
+            }
+            moneyLook.text = l.loadPlayerMoney.ToString();
+            s.善良();
+            isOpen = false;
         }
     }
 }

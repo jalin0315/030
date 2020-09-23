@@ -8,7 +8,8 @@ public class Marbles : MonoBehaviourPunCallbacks
 {
     public Vector3 vv;
     int i;
-    public int ID,rankint,lap;
+    public int ID,rankint,lap,bet;
+    Rigidbody ry;
 
     //public static List<GameObject> Rank = new List<GameObject>();
     //public List<GameObject> rank = new List<GameObject>();
@@ -16,6 +17,7 @@ public class Marbles : MonoBehaviourPunCallbacks
     private void Start()
     {
         GameManager.marbles.Add(gameObject);
+        ry = GetComponent<Rigidbody>();
     }
     private void Awake()
     {
@@ -40,6 +42,12 @@ public class Marbles : MonoBehaviourPunCallbacks
         //    }
         //}
         gameObject.name = photonView.Owner.NickName;
+        if (lap == RankManager._NumberOfTurns + 1 && !Rank.Marbles.Contains(gameObject.GetComponent<Marbles>())) 
+        {
+            Rank.Marbles.Add(gameObject.GetComponent<Marbles>());
+            ry.velocity = Vector3.zero;
+            gameObject.GetComponent<ConstantForce>().force = new Vector3(0, 10, 0);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

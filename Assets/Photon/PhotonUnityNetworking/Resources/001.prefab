@@ -313,6 +313,7 @@ MonoBehaviour:
   ID: 1
   rankint: 0
   lap: 0
+  bet: 0
 --- !u!114 &1689681447020256799
 MonoBehaviour:
   m_ObjectHideFlags: 0
