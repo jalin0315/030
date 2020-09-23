@@ -25,6 +25,13 @@ public class L_ : MonoBehaviourPun
     public Text money;
     public NetwordLauncher playername;
     //string fileName = "gamesave.dat";
+    public void Start()
+    {
+        if (S_L.isOpen)
+        {
+            善良();
+        }
+    }
     public void 善良()
     {
 
@@ -62,7 +69,15 @@ public class L_ : MonoBehaviourPun
         int index = SceneManager.GetActiveScene().buildIndex;
         if (index == 0)
         {
-            money.text = loadPlayerMoney.ToString();
+            if (money != null)
+            {
+                money.text = loadPlayerMoney.ToString();
+            }
+            else
+            {
+                money = GameObject.Find("Money").GetComponent<Text>();
+                money.text = loadPlayerMoney.ToString();
+            }
         }
     }
 }

@@ -389,6 +389,8 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         {
             Debug.Log(mapSelect);
             PhotonNetwork.LoadLevel(mapSelect);
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+            //改變房間可見可進
             check4 = false;
         }
         if (create && PhotonNetwork.IsMasterClient) 

@@ -1091,6 +1091,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5412a00418189694693ad5dbcf775659, type: 2}
   - {fileID: 2100000, guid: 8a256a88b06fd7741bcac298673fb397, type: 2}
   - {fileID: 2100000, guid: af377df852810004783986ab4908941a, type: 2}
+  mr: {fileID: 82029683}
 --- !u!1 &93958829
 GameObject:
   m_ObjectHideFlags: 0
@@ -23540,7 +23541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693cd22cce5b78b46ba2c4a3427bcee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 0}
+  start: {fileID: 1638945665}
+  login: {fileID: 818628255}
   check: 0
   judgment: 0
 --- !u!1 &1649547053

@@ -8,6 +8,8 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
 {
     public GameObject WaitPanel,player;
     public NetwordLauncher net;
+
+    public Rank rank;
     public void GoBackOnLine()
     {
         PhotonNetwork.LeaveRoom();
@@ -31,13 +33,16 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
     }
     public void GameLeave()
     {
-        PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(0);
-
+        RankManager._RankText.Clear();
+        Money.Gambing_.Clear();        
+        GameManager.marbles.Clear();
+        PlayerManager.Gps.Clear();
+        PhotonNetwork.LeaveRoom();        
     }
     public override void OnLeftRoom()
     {        
         base.OnLeftRoom();
+        SceneManager.LoadScene(0);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

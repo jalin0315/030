@@ -62,6 +62,12 @@ MonoBehaviour:
   - Gps
   - PutInPlay
   - GetEveryoneMarbles
+  - ESC
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

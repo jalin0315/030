@@ -23,10 +23,9 @@ public class ShowMarbles : MonoBehaviourPun
     public L_ l;
 
     public Material[] materials;
-    MeshRenderer mr;
+    public MeshRenderer mr;
     void Start()
     {
-        mr = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame

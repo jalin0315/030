@@ -12,7 +12,7 @@ public class Rank : MonoBehaviourPun
     public GameObject rank, over,exit;
     public Text money,moneyLook;
 
-    bool isOpen;
+    public bool isOpen;
     S_ s;
     L_ l;
     private void Start()
@@ -81,6 +81,12 @@ public class Rank : MonoBehaviourPun
             }
             moneyLook.text = l.loadPlayerMoney.ToString();
             s.善良();
+            for (int i = 0; i < Marbles.Count; i++)
+            {
+                Marbles[i].lap = 0;
+                Marbles[i].GetComponent<TrackPoint>().enabled = false;
+            }
+            Marbles.Clear();            
             isOpen = false;
         }
     }
