@@ -39,7 +39,7 @@ public class CameraSystemEditor : Editor
             _c_s._CameraMode = (CameraSystem.CameraMode)EditorGUILayout.EnumPopup("攝影機模式", _c_s._CameraMode);
             if (_c_s._CameraMode == CameraSystem.CameraMode.Local)
             {
-                _c_s._LocalPlayer = EditorGUILayout.ObjectField("本地玩家", _c_s._LocalPlayer, typeof(Transform), true) as Transform;
+                CameraSystem._LocalPlayer = EditorGUILayout.ObjectField("本地玩家", CameraSystem._LocalPlayer, typeof(Transform), true) as Transform;
                 _c_s._Pivot = EditorGUILayout.ObjectField("攝影機樞紐校正物件", _c_s._Pivot, typeof(Transform), true) as Transform;
                 _c_s._Y_Offset = EditorGUILayout.FloatField("偏移高度數值", _c_s._Y_Offset);
                 _c_s._Distance = EditorGUILayout.FloatField("距離於目標物數值", _c_s._Distance);

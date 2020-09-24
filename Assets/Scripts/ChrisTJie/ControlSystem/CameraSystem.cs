@@ -25,7 +25,7 @@ public class CameraSystem : MonoBehaviour
     public Button _LeftButton;
     public Button _RightButton;
     public Text _SpectatorsName;
-    public Transform _LocalPlayer;
+    public static Transform _LocalPlayer;
     public Transform _LookAt;
     [SerializeField] public List<Transform> _SpectatorPlayerList;
     [SerializeField] public List<Transform> _SceneCameraList;
@@ -55,6 +55,7 @@ public class CameraSystem : MonoBehaviour
 
     private void Start()
     {
+        _CameraMode = CameraMode.Local;
         _LookAt = _LocalPlayer;
         _Offset = new Vector3(0.0f, _Y_Offset, -1.0f * _Distance);
         _LeftButton.interactable = false;
@@ -63,8 +64,10 @@ public class CameraSystem : MonoBehaviour
         _SpectatorsName.text = null;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
+        _SpectatorPlayerList = Rank.ball;
+
         if (_CameraMode == CameraMode.Local)
         {
             _DesiredPosition = _LookAt.position + _Offset;

@@ -9,6 +9,8 @@ public class Rank : MonoBehaviourPun
     public static List<Marbles> Marbles = new List<Marbles>();
     public List<Marbles> marbles = new List<Marbles>();
 
+    public static List<Transform> ball = new List<Transform>();
+
     public GameObject rank, over,exit;
     public Text money,moneyLook;
 
@@ -25,6 +27,13 @@ public class Rank : MonoBehaviourPun
     {
         marbles = Marbles;
         GameOver();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("彈珠") && !ball.Contains(other.transform)) 
+        {
+            ball.Add(other.transform);
+        }
     }
     private void OnTriggerExit(Collider other)
     {

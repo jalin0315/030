@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     public List<GameObject> mrbs = new List<GameObject>();
 
     GameObject ms;
+    public MovementSystem mv;
     private void Awake()
     {
         ID = GameObject.Find("S&L").GetComponent<L_>().loadShowAndFight;
@@ -25,7 +26,13 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             {
                 gps = i;
             }
-        }                
+        }
+        u = "00" + ID;
+        GameObject mars = PhotonNetwork.Instantiate(u, position[gps].position, Quaternion.identity, 0);
+        mars.AddComponent<MovementSystem>();
+        mars.GetComponent<MovementSystem>().Text = mv.Text;
+        mars.GetComponent<MovementSystem>()._Rigidbody = mars.GetComponent<Rigidbody>();
+        CameraSystem._LocalPlayer = mars.transform;
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -59,8 +66,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         //        }
         //    }
         //}
-        u = "00" + ID;
-        GameObject mars = PhotonNetwork.Instantiate(u, position[gps].position, Quaternion.identity, 0);
+        
         
 
         //foreach (var player in PhotonNetwork.PlayerList)

@@ -56,6 +56,7 @@ public class L_ : MonoBehaviourPun
         }
         else
         {
+            loadPlayerName = PhotonNetwork.NickName;
             nameIn.SetActive(true);
             loadPlayerMoney = 100;
             loadShowAndFight = 1;

@@ -7,8 +7,8 @@ public class MovementSystem : MonoBehaviour
 {
     public static MovementSystem _Instance;
     public bool _EnableGyro;
-    [SerializeField] private Rigidbody _Rigidbody;
-    [SerializeField] private Text Text;
+    public Rigidbody _Rigidbody;
+    public Text Text;
 
     private void Awake()
     {
