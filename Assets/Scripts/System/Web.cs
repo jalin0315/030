@@ -15,6 +15,12 @@ public class Web : MonoBehaviour
 
     public L_ 讀檔;
 
+    public static string da;
+    public string dda;
+    private void Update()
+    {
+        dda = da;
+    }
     void Start()
     {
         //StartCoroutine(GetDate("http://localhost/UnityBackend/GetDate.php"));    //日期
@@ -22,7 +28,7 @@ public class Web : MonoBehaviour
         //StartCoroutine(Login("testuser", "123456"));    //登錄
         //StartCoroutine(RegisterUser("-/-", "123456"));    //創立
     }
-
+    
     IEnumerator GetDate(string uri)
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
@@ -81,6 +87,7 @@ public class Web : MonoBehaviour
             else
             {
                 提示.myText.text = www.downloadHandler.text.ToString();    //登入成功
+                Debug.LogError("?");
                 if (提示.myText.text == "登入成功")
                 {
                     開始連線.EnterGame();
@@ -131,4 +138,24 @@ public class Web : MonoBehaviour
             }
         }
     }
+    //public IEnumerator Save(string username,string data)
+    //{
+    //    WWWForm form = new WWWForm();
+    //    form.AddField("loginUser", username);
+    //    form.AddField("loginData", data);
+
+    //    using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.0.3/UnityBackend/Save.php", form))
+    //    {
+    //        yield return www.SendWebRequest();
+            
+    //        if (www.isNetworkError || www.isHttpError)
+    //        {
+    //            提示.myText.text = www.error.ToString();
+    //        }
+    //        else
+    //        {
+    //            data = da;
+    //        }
+    //    }
+    //}
 }

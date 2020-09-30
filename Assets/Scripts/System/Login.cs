@@ -11,6 +11,9 @@ public class Login : MonoBehaviour
     public Button loginButton;
     public Button createButton;
 
+    public Button da;
+    public string ta,name1;
+
     void Start()
     {
         loginButton.onClick.AddListener(() =>
@@ -22,9 +25,13 @@ public class Login : MonoBehaviour
         {
             StartCoroutine(Main.Instance.Web.RegisterUser(usernameInput.text, passwordInput.text));
         });
+        //da.onClick.AddListener(() =>
+        //{
+        //    StartCoroutine(Main.Instance.Web.Save(name1,ta));
+        //});
     }
     void Update()
     {
-        
+        //name1 = usernameInput.text.ToString();
     }
 }

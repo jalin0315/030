@@ -251,7 +251,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         if (!PhotonNetwork.IsMasterClient)
         {
             foreach (var player in PhotonNetwork.PlayerList)
-            {
+            {                
                 if (player.IsMasterClient)
                 {
                     roomText.text = player.CustomProperties["name"].ToString();
