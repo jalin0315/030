@@ -32,7 +32,7 @@ public class ShowMarbles : MonoBehaviourPun
     void Update()
     {
         ShowAndRing();
-        if (PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected && l.loadShowAndFight != 0)
         {
             mr.material = materials[l.loadShowAndFight - 1];
         }

@@ -15,11 +15,10 @@ public class Web : MonoBehaviour
 
     public L_ 讀檔;
 
-    public static string da;
-    public string dda;
+    public string s1, s2;
+
     private void Update()
     {
-        dda = da;
     }
     void Start()
     {
@@ -87,7 +86,6 @@ public class Web : MonoBehaviour
             else
             {
                 提示.myText.text = www.downloadHandler.text.ToString();    //登入成功
-                Debug.LogError("?");
                 if (提示.myText.text == "登入成功")
                 {
                     開始連線.EnterGame();
@@ -127,7 +125,7 @@ public class Web : MonoBehaviour
                 if (提示.myText.text == "建立帳號中...帳號建立成功")
                 {
                     開始連線.EnterGame();
-                    讀檔.善良();
+                    讀檔.n善良();
                     系統面板.SetActive(false);
                 }
                 else if (提示.myText.text == "這個帳號已經被使用")
@@ -138,24 +136,46 @@ public class Web : MonoBehaviour
             }
         }
     }
-    //public IEnumerator Save(string username,string data)
-    //{
-    //    WWWForm form = new WWWForm();
-    //    form.AddField("loginUser", username);
-    //    form.AddField("loginData", data);
+    public IEnumerator Save(string username, string data)
+    {
+        //data = da;
+        WWWForm form = new WWWForm();
+        form.AddField("loginUser", username);
+        form.AddField("loginData", data);
 
-    //    using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.0.3/UnityBackend/Save.php", form))
-    //    {
-    //        yield return www.SendWebRequest();
-            
-    //        if (www.isNetworkError || www.isHttpError)
-    //        {
-    //            提示.myText.text = www.error.ToString();
-    //        }
-    //        else
-    //        {
-    //            data = da;
-    //        }
-    //    }
-    //}
+        using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.0.3/UnityBackend/Save.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                提示.myText.text = www.error.ToString();
+            }
+            else
+            {
+                提示.myText.text = www.downloadHandler.text.ToString();
+            }
+        }
+    }
+    public IEnumerator Load(string username, string data)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("loginUser", username);
+        form.AddField("loginData", data);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.0.3/UnityBackend/Load.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                提示.myText.text = www.error.ToString();                
+            }
+            else
+            {
+                L_.marbles = JsonUtility.FromJson<MarblesEquipment>(www.downloadHandler.text.ToString());
+                讀檔.Load();
+            }
+        }
+    }
 }

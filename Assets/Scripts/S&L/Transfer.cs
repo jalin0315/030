@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Transfer : MonoBehaviour
 {
     public Text userName,userPass;
+    public L_ l;
 
     Button me;
     void Start()
@@ -27,7 +28,6 @@ public class Transfer : MonoBehaviour
     }
     public void transfer()
     {
-        S_.username = userName.text.ToString();
-        L_.username = userName.text.ToString();        
+        l.loadPlayerName = userName.text.ToString();        
     }
 }

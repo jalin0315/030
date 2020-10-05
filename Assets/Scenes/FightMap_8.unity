@@ -4203,7 +4203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MultiLapMode: 1
-  _numberOfTurns: 1000
+  _numberOfTurns: 3
   _rankText: []
 --- !u!1 &769396332
 GameObject:
@@ -8119,6 +8119,8 @@ MonoBehaviour:
   start: {fileID: 0}
   money: {fileID: 0}
   playername: {fileID: 0}
+  fileName: 
+  oaoa: 
 --- !u!114 &1649329035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8134,6 +8136,7 @@ MonoBehaviour:
   l: {fileID: 0}
   savePlayerName: 
   saveMarblesID: 
+  myname: {fileID: 0}
 --- !u!4 &1649329036
 Transform:
   m_ObjectHideFlags: 0
