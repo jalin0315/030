@@ -42,7 +42,7 @@ public class Marbles : MonoBehaviourPunCallbacks
         //    }
         //}
         gameObject.name = photonView.Owner.NickName;
-        if (lap == RankManager._NumberOfTurns + 1 && !Rank.Marbles.Contains(gameObject.GetComponent<Marbles>())) 
+        if (lap == RankManager._NumberOfTurns + 1 && !Rank.Marbles.Contains(gameObject.GetComponent<Marbles>()) && PhotonNetwork.PlayerList.Length > 1)  
         {
             Rank.Marbles.Add(gameObject.GetComponent<Marbles>());
             ry.velocity = Vector3.zero;

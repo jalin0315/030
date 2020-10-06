@@ -13,7 +13,6 @@ public class L_ : MonoBehaviourPun
     //宣告一個字串讀取檔案，宣告一個Data物件(上一篇定義的可用來存放遊戲資訊)來取得字串轉換後的物件
     public static string username,轉嫁;
 
-    string LoadData;
     public static MarblesEquipment marbles;
 
     public string loadPlayerName;
@@ -28,8 +27,20 @@ public class L_ : MonoBehaviourPun
     public static string 帳號;
     public string fileName,oaoa;
     //string fileName = "gamesave.dat";
+
+    public static int check;
+    static L_ instance;
     public void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        //else if (instance != this)
+        //{
+        //    enabled = false;
+        //}
+
         if (S_L.isOpen)
         {
             善良();
@@ -47,35 +58,33 @@ public class L_ : MonoBehaviourPun
     public void 善良()
     {
         Debug.Log("善良");
-        StartCoroutine(Main.Instance.Web.Load(帳號, fileName));
-        //fileName = 轉嫁;
-
-        //讀取指定路徑的Json檔案並轉成字串(路徑同上一篇)
-
-        //if (fileName != null)
-        //{
-        //    //LoadData = fileName;
-        //    //把字串轉換成Data物件
-        //    marbles = JsonUtility.FromJson<MarblesEquipment>(fileName);
-
-
-        //}
-        //else
-        //{
-        
-        //}
+        StartCoroutine(Main.Instance.Web.Load(帳號, fileName));        
     }
     public void Load()
     {
-        loadPlayerName = marbles.playerName;
-        loadPlayerMoney = marbles.playerMoney;
-        loadMarblesID = marbles.marblesID;
-        loadShowAndFight = marbles.showAndFight;
-        start.SetActive(false);
-        playername.nameText.text = loadPlayerName;
-        PhotonNetwork.NickName = loadPlayerName;
-        money.text = loadPlayerMoney.ToString();
-        Debug.LogWarning("讀取完成,你好  " + loadPlayerName);
+        if (check != 0 && instance != this)
+        {
+            loadPlayerName = marbles.playerName;
+            loadPlayerMoney = marbles.playerMoney;
+            loadMarblesID = marbles.marblesID;
+            loadShowAndFight = marbles.showAndFight;
+            playername.nameText.text = loadPlayerName;
+            PhotonNetwork.NickName = loadPlayerName;
+            money.text = loadPlayerMoney.ToString();
+            Debug.LogWarning("讀取完成,你好  " + loadPlayerName);
+        }
+        else if (check == 0)
+        {
+            loadPlayerName = marbles.playerName;
+            loadPlayerMoney = marbles.playerMoney;
+            loadMarblesID = marbles.marblesID;
+            loadShowAndFight = marbles.showAndFight;
+            start.SetActive(false);
+            playername.nameText.text = loadPlayerName;
+            PhotonNetwork.NickName = loadPlayerName;
+            money.text = loadPlayerMoney.ToString();
+            Debug.LogWarning("讀取完成,你好  " + loadPlayerName);
+        }
     }
     private void Update()
     {
@@ -92,6 +101,15 @@ public class L_ : MonoBehaviourPun
                 money = GameObject.Find("Money").GetComponent<Text>();
                 money.text = loadPlayerMoney.ToString();
             }
+            if (playername == null)
+            {
+                playername = GameObject.Find("NetworkLauncher").GetComponent<NetwordLauncher>();
+                playername.nameText.text = loadPlayerName;
+            }
+        }
+        else
+        {
+            check = 1;
         }
     }
 }

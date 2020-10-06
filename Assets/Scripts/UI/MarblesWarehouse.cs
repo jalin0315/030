@@ -11,17 +11,16 @@ public class MarblesWarehouse : MonoBehaviour
     public S_ s;
     private void Awake()
     {
+        l = GameObject.Find("S&L").GetComponent<L_>();
+        s = GameObject.Find("S&L").GetComponent<S_>();
+
+        me = GetComponent<Button>();
+
         if (!l.loadMarblesID.Contains(IDCalibration))
         {
             gameObject.SetActive(false);
         }
     }
-    void Start()
-    {
-        me = GetComponent<Button>();        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (l.loadShowAndFight == IDCalibration && l.loadMarblesID.Count > 1) 

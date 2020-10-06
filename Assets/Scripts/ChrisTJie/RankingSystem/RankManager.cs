@@ -17,7 +17,7 @@ public class RankManager : MonoBehaviour
     public List<GameObject> _rankText = new List<GameObject>();
     private Dictionary<string, PlayerRank> _Players;
 
-
+    public static bool isOpen;
     private void Awake()
     {
         _Instance = this;
@@ -31,6 +31,9 @@ public class RankManager : MonoBehaviour
 
     public void SetRank(PlayerRank _player)
     {
+        if (isOpen)
+            return;
+
         _Players[_player._Name] = _player;
         if (_MultiLapMode == true)
         {

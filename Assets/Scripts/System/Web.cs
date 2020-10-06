@@ -153,7 +153,7 @@ public class Web : MonoBehaviour
             }
             else
             {
-                提示.myText.text = www.downloadHandler.text.ToString();
+                //提示.myText.text = www.downloadHandler.text.ToString();
             }
         }
     }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class Wait_Fight : MonoBehaviour
+public class Wait_Fight : MonoBehaviourPun
 {
     public static bool orange;
     public float timing;
@@ -36,7 +37,7 @@ public class Wait_Fight : MonoBehaviour
             muu = true;
             orange = false;
         }
-        if (timing <= 0)
+        if (timing <= 0 && PhotonNetwork.PlayerList.Length >= 4)
         {
             muu = false;
             for (int i = 0; i < waitt.Length; i++)
@@ -45,6 +46,14 @@ public class Wait_Fight : MonoBehaviour
             }
             Stop.SetActive(false);
             timing = load;
+        }
+        if (PhotonNetwork.PlayerList.Length < 4)
+        {
+            for (int i = 0; i < waitt.Length; i++)
+            {
+                waitt[i].SetActive(false);
+            }            
+            Stop.SetActive(false);
         }
     }
 }

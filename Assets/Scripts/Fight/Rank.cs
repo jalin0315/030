@@ -25,6 +25,9 @@ public class Rank : MonoBehaviourPun
     }
     private void Update()
     {
+        if (PhotonNetwork.PlayerList.Length == 1)
+            return;
+
         marbles = Marbles;
         GameOver();
     }
@@ -44,7 +47,7 @@ public class Rank : MonoBehaviourPun
     }
     public void GameOver()
     {
-        if (Marbles.Count == PhotonNetwork.PlayerList.Length) 
+        if (Marbles.Count == PhotonNetwork.PlayerList.Length && PhotonNetwork.PlayerList.Length != 0) 
         {
             rank.SetActive(false);
             over.SetActive(true);

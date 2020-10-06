@@ -22,6 +22,10 @@ public class S_L : MonoBehaviourPunCallbacks
             instance = this;
             DontDestroyOnLoad(this);
         }
+        else if (instance != null)
+        {
+            Destroy(gameObject);
+        }
 
         //start = GameObject.Find("Start").gameObject;
 

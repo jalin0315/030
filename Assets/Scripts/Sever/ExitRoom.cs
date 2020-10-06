@@ -9,7 +9,15 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
     public GameObject WaitPanel,player;
     public NetwordLauncher net;
 
-    public Rank rank;
+
+    private void Awake()
+    {
+        if (PhotonNetwork.PlayerList.Length > 1)
+        {
+            gameObject.transform.parent.gameObject.SetActive(false);
+        }
+    }
+
     public void GoBackOnLine()
     {
         PhotonNetwork.LeaveRoom();
@@ -22,7 +30,7 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
         net.check3 = true;
         foreach (var pl in PhotonNetwork.PlayerList)
         {
-            if (pl.NickName == PhotonNetwork.NickName) 
+            if (pl.NickName == PhotonNetwork.NickName)
             {
                 for (int i = 0; i < player.transform.childCount; i++)
                 {
@@ -33,16 +41,17 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
     }
     public void GameLeave()
     {
+        RankManager.isOpen = true;
         RankManager._RankText.Clear();
         Money.Gambing_.Clear();        
         GameManager.marbles.Clear();
         PlayerManager.Gps.Clear();
-        PhotonNetwork.LeaveRoom();        
+        PhotonNetwork.LeaveRoom();
     }
     public override void OnLeftRoom()
-    {        
-        base.OnLeftRoom();
-        SceneManager.LoadScene(0);
+    {
+        SceneManager.LoadScene(0);        
+        base.OnLeftRoom();        
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

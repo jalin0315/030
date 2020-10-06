@@ -14,6 +14,9 @@ public class Store : MonoBehaviour
     Button me;
     void Awake()
     {
+        l = GameObject.Find("S&L").GetComponent<L_>();
+        s = GameObject.Find("S&L").GetComponent<S_>();
+
         money = int.Parse(Money.text);
         me = GetComponent<Button>();
 

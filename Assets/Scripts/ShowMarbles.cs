@@ -26,6 +26,7 @@ public class ShowMarbles : MonoBehaviourPun
     public MeshRenderer mr;
     void Start()
     {
+        l = GameObject.Find("S&L").GetComponent<L_>();
     }
 
     // Update is called once per frame
@@ -43,13 +44,18 @@ public class ShowMarbles : MonoBehaviourPun
 
         if (isBack)
         {
+            Debug.LogError("01");
             ring.SetActive(false);
+            Debug.LogError("02");
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, 0, 40), 1);
+            Debug.LogError("03");
             if (transform.position == new Vector3(0, 0, 40))
             {
+                Debug.LogError("04");
                 等待人數.SetActive(true);
                 isOpen = false;
                 isBack = false;
+                Debug.LogError("05");
             }
         }
 
