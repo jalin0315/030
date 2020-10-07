@@ -20,7 +20,7 @@ public class TrackPoint : MonoBehaviourPun
     {
         _TrackPoint = new GameObject();
         _TrackPoint.name = "TrackPoint_" + photonView.Owner.NickName;
-        IconManager.SetIcon(_TrackPoint, IconManager.Icon.DiamondPurple);
+        //IconManager.SetIcon(_TrackPoint, IconManager.Icon.DiamondPurple);
     }
 
     private float _update_time;

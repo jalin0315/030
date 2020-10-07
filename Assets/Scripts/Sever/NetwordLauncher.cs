@@ -95,6 +95,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         {
             roomText.text = "滾滾滾起來";
             RoomOptions options = new RoomOptions { MaxPlayers = 8 };
+            options.CleanupCacheOnLeave = false;
             PhotonNetwork.CreateRoom("滾滾滾起來", options, default);
         }
         else
@@ -135,6 +136,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
                             Maxplayer = (byte)i;
                             RoomOptions options = new RoomOptions();
                             options.CustomRoomProperties = noPas;
+                            options.CleanupCacheOnLeave = false;
                             options.CustomRoomPropertiesForLobby = new string[] { "Public" };
 
 
@@ -167,6 +169,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
                     Maxplayer = (byte)i;
                     RoomOptions options = new RoomOptions();
                     options.CustomRoomProperties = noPas;
+                    options.CleanupCacheOnLeave = false;
                     options.CustomRoomPropertiesForLobby = new string[] { "Public" };
 
 
@@ -199,6 +202,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
 
                             Maxplayer = (byte)i;
                             RoomOptions options = new RoomOptions { MaxPlayers = Maxplayer, IsVisible = false };
+                            options.CleanupCacheOnLeave = false;
                             PhotonNetwork.CreateRoom(roomNameCreate.text, options, default);
                             marbles.isBack = true;
                             create = true;
@@ -211,7 +215,8 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
                     roomText.text = roomNameCreate.text;
                     int i = int.Parse(maxplayer.transform.GetChild(0).GetComponent<Text>().text);
                     Maxplayer = (byte)i;
-                    RoomOptions options = new RoomOptions { MaxPlayers = Maxplayer, IsVisible = false };                    
+                    RoomOptions options = new RoomOptions { MaxPlayers = Maxplayer, IsVisible = false };
+                    options.CleanupCacheOnLeave = false;
                     PhotonNetwork.CreateRoom(roomNameCreate.text, options, default);
                     marbles.isBack = true;
                     create = true;

@@ -50,8 +50,12 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
     }
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene(0);        
-        base.OnLeftRoom();        
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if (index != 0)
+        {
+            SceneManager.LoadScene(0);            
+        }
+        base.OnLeftRoom();
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

@@ -1080,7 +1080,7 @@ MonoBehaviour:
   ring: {fileID: 715647738}
   iCon: []
   start: {fileID: 1638945665}
-  "\u7B49\u5F85\u4EBA\u6578": {fileID: 1275161086}
+  wait: {fileID: 1275161086}
   l: {fileID: 1649329034}
   materials:
   - {fileID: 2100000, guid: 3e7ec6817a4c1194fbb14c3c6e11f63a, type: 2}
@@ -17619,7 +17619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1275161087
 RectTransform:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class ShowMarbles : MonoBehaviourPun
     bool isGo, isOpen, isRight, isLeft;
     Vector2 mouse, drag;
 
-    public GameObject start,等待人數;
+    public GameObject start,wait;
 
     //旋轉的角度上限。
     float rotationleft = 45;
@@ -27,6 +27,7 @@ public class ShowMarbles : MonoBehaviourPun
     void Start()
     {
         l = GameObject.Find("S&L").GetComponent<L_>();
+        wait.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,18 +45,13 @@ public class ShowMarbles : MonoBehaviourPun
 
         if (isBack)
         {
-            Debug.LogError("01");
             ring.SetActive(false);
-            Debug.LogError("02");
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, 0, 40), 1);
-            Debug.LogError("03");
             if (transform.position == new Vector3(0, 0, 40))
             {
-                Debug.LogError("04");
-                等待人數.SetActive(true);
+                wait.SetActive(true);
                 isOpen = false;
                 isBack = false;
-                Debug.LogError("05");
             }
         }
 
@@ -175,7 +171,7 @@ public class ShowMarbles : MonoBehaviourPun
 
     private void OnMouseDown()
     {
-        if (start.activeSelf || 等待人數.activeSelf)             
+        if (start.activeSelf || wait.activeSelf)             
             return;
         isGo = true;
     }
