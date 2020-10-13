@@ -14,6 +14,9 @@ public class Wait_Fight : MonoBehaviourPun
     float QQDD,load;
 
     public GameObject Stop;
+
+    public bool isOpen;
+    public Rank rank;
     private void Start()
     {
         wait = GetComponent<Text>();        
@@ -22,38 +25,55 @@ public class Wait_Fight : MonoBehaviourPun
     }
     void Update()
     {
-        if (muu)
+        if (!isOpen)
         {
-            timing -= 1 * Time.deltaTime;
-            wait.text = ((int)timing).ToString();
-        }
-        if (orange)
-        {
-            QQDD += 1 * Time.deltaTime;
-            //NetwordLauncher.random = false;                      
-        }
-        if (QQDD >= 1)
-        {
-            muu = true;
-            orange = false;
-        }
-        if (timing <= 0 && PhotonNetwork.PlayerList.Length >= 4)
-        {
-            muu = false;
-            for (int i = 0; i < waitt.Length; i++)
+            if (muu)
             {
-                waitt[i].SetActive(false);
+                timing -= 1 * Time.deltaTime;
+                wait.text = ((int)timing).ToString();
             }
-            Stop.SetActive(false);
-            timing = load;
-        }
-        if (PhotonNetwork.PlayerList.Length < 4)
-        {
-            for (int i = 0; i < waitt.Length; i++)
+            if (orange)
             {
-                waitt[i].SetActive(false);
+                QQDD += 1 * Time.deltaTime;
+                //NetwordLauncher.random = false;                      
+            }
+            if (QQDD >= 1)
+            {
+                muu = true;
+                orange = false;
+            }
+            if (timing <= 0 && PhotonNetwork.PlayerList.Length >= 4)
+            {
+                muu = false;
+                for (int i = 0; i < waitt.Length; i++)
+                {
+                    waitt[i].SetActive(false);
+                }
+                Stop.SetActive(false);
+                timing = load;
+            }
+            if (PhotonNetwork.PlayerList.Length < 4)
+            {
+                for (int i = 0; i < waitt.Length; i++)
+                {
+                    waitt[i].SetActive(false);
+                }
+                Stop.SetActive(false);
+            }
+        }
+        else
+        {
+            
+                timing -= 1 * Time.deltaTime;
+                wait.text = ((int)timing).ToString();
+            
+            if (timing <= 0)
+            {
+                muu = false;                
+                timing = load;
+                rank.GameOver();
+                Rank.isStart = false;
             }            
-            Stop.SetActive(false);
         }
     }
 }

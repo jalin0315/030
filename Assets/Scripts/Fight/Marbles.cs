@@ -44,10 +44,14 @@ public class Marbles : MonoBehaviourPunCallbacks
         gameObject.name = photonView.Owner.NickName;
         if (lap == RankManager._NumberOfTurns + 1 && !Rank.Marbles.Contains(gameObject.GetComponent<Marbles>()) && PhotonNetwork.PlayerList.Length > 1)  
         {
+            if (!Rank.isStart)
+            {
+                Rank.isStart = true;
+            }
             Rank.Marbles.Add(gameObject.GetComponent<Marbles>());
             ry.velocity = Vector3.zero;
             gameObject.GetComponent<ConstantForce>().force = new Vector3(0, 10, 0);
-        }
+        }        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -80,5 +84,5 @@ public class Marbles : MonoBehaviourPunCallbacks
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Debug.Log(i);
         }
-    }
+    }    
 }

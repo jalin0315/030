@@ -43,6 +43,7 @@ public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
     {
         RankManager.isOpen = true;
         RankManager._RankText.Clear();
+        Rank.ball.Clear();
         Money.Gambing_.Clear();        
         GameManager.marbles.Clear();
         PlayerManager.Gps.Clear();

@@ -331,15 +331,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
             ButtonControl.PlayerNameClose[i].SetActive(false);
         }
     }
-    //public void GameStart()
-    //{        
-    //    if (PhotonNetwork.IsMasterClient)
-    //    {
-    //        S_L.Check += 1;
-    //        PhotonNetwork.LoadLevel(1);
-    //        photonView.RPC("Friend", RpcTarget.All);
-    //    }
-    //}
+    
 
     public void 我就自嗨()
     {

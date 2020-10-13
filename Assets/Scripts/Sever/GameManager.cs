@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-
+using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-
+        
     }
     private void Start()
     {
@@ -89,7 +89,15 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     }
     private void Update()
     {
-        mrbs = marbles;
+        mrbs = marbles;        
+    }
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        
+    }
+    public void OnApplicationPause(bool pause)
+    {
+        
     }
 }
    

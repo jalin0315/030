@@ -13,7 +13,7 @@ public class ShowMarbles : MonoBehaviourPun
     bool isGo, isOpen, isRight, isLeft;
     Vector2 mouse, drag;
 
-    public GameObject start,wait;
+    public GameObject start, wait;
 
     //旋轉的角度上限。
     float rotationleft = 45;
@@ -171,7 +171,7 @@ public class ShowMarbles : MonoBehaviourPun
 
     private void OnMouseDown()
     {
-        if (start.activeSelf || wait.activeSelf)             
+        if (start.activeSelf || wait.activeSelf || isBack)              
             return;
         isGo = true;
     }

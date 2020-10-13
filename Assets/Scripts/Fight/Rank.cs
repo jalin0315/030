@@ -11,10 +11,11 @@ public class Rank : MonoBehaviourPun
 
     public static List<Transform> ball = new List<Transform>();
 
-    public GameObject rank, over,exit;
+    public GameObject rank, over,exit,time;
     public Text money,moneyLook;
 
     public bool isOpen;
+    public static bool isStart;
     S_ s;
     L_ l;
     private void Start()
@@ -26,10 +27,20 @@ public class Rank : MonoBehaviourPun
     private void Update()
     {
         if (PhotonNetwork.PlayerList.Length == 1)
+        {
+            exit.SetActive(true);
             return;
+        }
+        else
+        {
+            marbles = Marbles;
+            //GameOver();
 
-        marbles = Marbles;
-        GameOver();
+            if (isStart)
+            {
+                time.SetActive(true);
+            }
+        }        
     }
     private void OnTriggerEnter(Collider other)
     {
