@@ -4515,7 +4515,6 @@ Transform:
   - {fileID: 1411178393}
   - {fileID: 2011980788}
   - {fileID: 2063472593}
-  - {fileID: 902927649}
   m_Father: {fileID: 1461753838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4537,7 +4536,6 @@ MonoBehaviour:
   _SelectedLabelIcon: 3
   _PointLineColor: {r: 0, g: 1, b: 0, a: 1}
   _Count: 44
-  _Count: 45
   _Waypoints:
   - {fileID: 280119346}
   - {fileID: 637349989}
@@ -4583,7 +4581,6 @@ MonoBehaviour:
   - {fileID: 1411178393}
   - {fileID: 2011980788}
   - {fileID: 2063472593}
-  - {fileID: 902927649}
   _Mode: 1
   _DrawPointType: 0
 --- !u!114 &761831842
