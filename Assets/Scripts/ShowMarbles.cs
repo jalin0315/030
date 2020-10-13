@@ -171,7 +171,7 @@ public class ShowMarbles : MonoBehaviourPun
 
     private void OnMouseDown()
     {
-        if (start.activeSelf || wait.activeSelf)             
+        if (start.activeSelf || wait.activeSelf || isBack)             
             return;
         isGo = true;
     }

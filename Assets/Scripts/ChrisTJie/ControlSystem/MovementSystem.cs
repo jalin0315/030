@@ -29,6 +29,6 @@ public class MovementSystem : MonoBehaviour
         Vector3 _movement = new Vector3(_horizontal, 0.0f, 0.0f);
         Vector3 _actual_direction = Camera.main.transform.TransformDirection(_movement);
         _Rigidbody.AddForce(_actual_direction * 500 * 2); // * 50 * 2
-        Text.text = _horizontal.ToString();
+        //Text.text = _horizontal.ToString();
     }
 }

@@ -6,16 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class ExitRoom : MonoBehaviourPunCallbacks,IPunObservable
 {
+    public static ExitRoom _Instance;
     public GameObject WaitPanel,player;
     public NetwordLauncher net;
 
 
     private void Awake()
     {
-        if (PhotonNetwork.PlayerList.Length > 1)
+        _Instance = this;
+        /*if (PhotonNetwork.PlayerList.Length > 1)
         {
             gameObject.transform.parent.gameObject.SetActive(false);
-        }
+        }*/
     }
 
     public void GoBackOnLine()

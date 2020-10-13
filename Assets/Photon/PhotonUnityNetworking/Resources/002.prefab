@@ -185,8 +185,8 @@ GameObject:
   - component: {fileID: 7770311632971146970}
   - component: {fileID: 7770311631854156143}
   - component: {fileID: 650688415305192382}
-  - component: {fileID: -8307118414354419961}
   - component: {fileID: 6366285453661492357}
+  - component: {fileID: 5563343436031198118}
   m_Layer: 0
   m_Name: 002
   m_TagString: "\u5F48\u73E0"
@@ -329,12 +329,12 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 0
+  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 650688415305192382}
-  - {fileID: -8307118414354419961}
+  - {fileID: 5563343436031198118}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -350,23 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef714a76ddbe62a419ccc73d7ef8d26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smooth: 6
---- !u!114 &-8307118414354419961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770311632971146968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
+  smooth: 5
 --- !u!114 &6366285453661492357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,3 +368,19 @@ MonoBehaviour:
   _MultiLapWaypointIndex: 0
   _PreviousLapIndex: -1
   _RankGive: -1
+--- !u!114 &5563343436031198118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770311632971146968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3

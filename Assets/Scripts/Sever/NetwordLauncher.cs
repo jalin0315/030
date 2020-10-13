@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 
-public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
+public class NetwordLauncher : MonoBehaviourPunCallbacks, IPunObservable
 {
     //public static NetwordLauncher instance;
     public InputField roomNameCreate, roomNameSearch;
@@ -17,10 +17,10 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
     public Text nameText, roomText;
     public Image roomList;
     public GameObject chat;
-    public bool random,create;
+    public bool random, create;
     public int index;
 
-    public byte Maxplayer;  
+    public byte Maxplayer;
 
     public GameObject roomNoExist;
 
@@ -30,11 +30,11 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
     public GameObject playerNamePrefab;
     public Transform gridLayout;
 
-    public GameObject 抽大圖, 抽小圖,創建面板;    //抽小圖還沒做
+    public GameObject 抽大圖, 抽小圖, 創建面板;    //抽小圖還沒做
 
-    public int ran,mapCheck;
+    public int ran, mapCheck;
     public static int mapSelect;
-    public Button slot,StarT;
+    public Button slot, StarT;
 
     public Dropdown maxplayer;
     public bool check1 = true, check2 = true, check3 = true, check4 = true;
@@ -78,7 +78,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         roomNoExist.SetActive(true);
     }
     public void JoinButton()
-    {   
+    {
         if (roomNameSearch.text.Length < 1)
         {
             return;
@@ -162,7 +162,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
                         noPas.Add("Public", isPublic);
                         PhotonNetwork.LocalPlayer.SetCustomProperties(noPas, null);
                     }
-                    
+
                     roomText.text = roomNameCreate.text;
                     int i = int.Parse(maxplayer.transform.GetChild(0).GetComponent<Text>().text);
 
@@ -238,7 +238,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         //    marbles.isBack = true;
         //    create = true;                        
         //}
-        if (rmnm.ContainsKey("name"))    
+        if (rmnm.ContainsKey("name"))
         {
             rmnm.Remove("name");
             rmnm.Add("name", roomText.text);
@@ -249,14 +249,14 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
             rmnm.Add("name", roomText.text);
             PhotonNetwork.LocalPlayer.SetCustomProperties(rmnm, null);
         }
-    }    
+    }
 
     public override void OnJoinedRoom()
     {
         if (!PhotonNetwork.IsMasterClient)
         {
             foreach (var player in PhotonNetwork.PlayerList)
-            {                
+            {
                 if (player.IsMasterClient)
                 {
                     roomText.text = player.CustomProperties["name"].ToString();
@@ -309,7 +309,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         }
     }
     public void EnterGame()
-    {     
+    {
         PhotonNetwork.ConnectUsingSettings();
 
         if (PlayerPrefs.GetString("Name").Length != 0)
@@ -359,7 +359,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
     {
         //noRoomLook.SetActive(true);
         CreateButton();
-    }    
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Delete))
@@ -374,18 +374,18 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         //}
 
 
-        if (PhotonNetwork.PlayerList.Length == 8 && check1 && random && ran == 8)  
+        if (PhotonNetwork.PlayerList.Length == 8 && check1 && random && ran == 8)
         {
             photonView.RPC("PlayerInRoom_1", RpcTarget.All);
-            check1 = false;            
+            check1 = false;
         }
-        if (PhotonNetwork.PlayerList.Length == 8 && !check1 && !PromptUI.PromptPut[1].activeSelf && check2 && random && ran == 8) 
+        if (PhotonNetwork.PlayerList.Length == 8 && !check1 && !PromptUI.PromptPut[1].activeSelf && check2 && random && ran == 8)
         {
             抽大圖.SetActive(true);
             check2 = false;
             //PhotonNetwork.LoadLevel(1);
         }
-        if (ran != Maxplayer && mapCheck != 0 && check3) 
+        if (ran != Maxplayer && mapCheck != 0 && check3)
         {
             photonView.RPC("PlayerInRoom_2", RpcTarget.All);
             check3 = false;
@@ -398,7 +398,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
             //改變房間可見可進
             check4 = false;
         }
-        if (create && PhotonNetwork.IsMasterClient) 
+        if (create && PhotonNetwork.IsMasterClient)
         {
             slot.enabled = true;
             StarT.gameObject.SetActive(true);
@@ -406,7 +406,7 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
     }
     [PunRPC]
     public void PlayerInRoom_1()
-    {        
+    {
         PromptUI.PromptPut[1].SetActive(true);    //抽圖面板倒數開啟      
     }
     [PunRPC]
@@ -438,9 +438,9 @@ public class NetwordLauncher : MonoBehaviourPunCallbacks,IPunObservable
         //nameText.text = PhotonNetwork.NickName;
     }
     public void RoomList()
-    {        
-        PhotonNetwork.JoinRoom(roomName);        
-        PromptUI.PromptPut[3].SetActive(false);        
+    {
+        PhotonNetwork.JoinRoom(roomName);
+        PromptUI.PromptPut[3].SetActive(false);
     }
     public override void OnMasterClientSwitched(Player newMasterClient)
     {
