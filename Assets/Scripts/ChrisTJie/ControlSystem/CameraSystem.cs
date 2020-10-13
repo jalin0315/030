@@ -66,7 +66,7 @@ public class CameraSystem : MonoBehaviour
 
     private void LateUpdate()
     {
-        _SpectatorPlayerList = Rank.ball;
+        _SpectatorPlayerList = Rank._Instance.ball;
 
         if (_CameraMode == CameraMode.Local)
         {

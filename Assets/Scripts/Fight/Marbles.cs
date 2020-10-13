@@ -18,6 +18,7 @@ public class Marbles : MonoBehaviourPunCallbacks
     {
         GameManager.marbles.Add(gameObject);
         ry = GetComponent<Rigidbody>();
+        gameObject.name = photonView.Owner.NickName;
     }
     private void Awake()
     {
@@ -41,7 +42,6 @@ public class Marbles : MonoBehaviourPunCallbacks
         //        }
         //    }
         //}
-        gameObject.name = photonView.Owner.NickName;
         if (lap == RankManager._NumberOfTurns + 1 && !Rank.Marbles.Contains(gameObject.GetComponent<Marbles>()) && PhotonNetwork.PlayerList.Length > 1)  
         {
             if (!Rank.isStart)

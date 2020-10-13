@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class Rank : MonoBehaviourPun
 {
+    public static Rank _Instance;
     public static List<Marbles> Marbles = new List<Marbles>();
     public List<Marbles> marbles = new List<Marbles>();
 
-    public static List<Transform> ball = new List<Transform>();
+    public List<Transform> ball = new List<Transform>();
 
     public GameObject rank, over,exit,time;
     public Text money,moneyLook;
@@ -18,6 +19,10 @@ public class Rank : MonoBehaviourPun
     public static bool isStart;
     S_ s;
     L_ l;
+    private void Awake()
+    {
+        _Instance = this;
+    }
     private void Start()
     {
         isOpen = true;
